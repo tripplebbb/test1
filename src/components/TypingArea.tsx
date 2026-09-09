@@ -11,7 +11,7 @@ interface Props {
   onInput: (value: string) => void;
 }
 
-const MAX_LINE_CHARS = 56;
+const MAX_LINE_CHARS = 70;
 
 export function TypingArea({ text, charStates, cursor, typed, onInput }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -33,21 +33,27 @@ export function TypingArea({ text, charStates, cursor, typed, onInput }: Props) 
   }, [typed]);
 
   return (
-    <div className="typing-area" onClick={() => inputRef.current?.focus()}>
-      <div className="typing-line typing-line-current">
-        {text.slice(current.start, current.end).split('').map((char, i) => {
-          const globalIndex = current.start + i;
-          const state: CharState = charStates[globalIndex] ?? 'pending';
-          const isCursor = globalIndex === cursor;
-          return (
-            <span key={globalIndex} className={`char ${state} ${isCursor ? 'cursor' : ''}`}>
-              {char}
-            </span>
-          );
-        })}
-      </div>
-      <div className="typing-line typing-line-next">
-        {next ? text.slice(next.start, next.end) : ' '}
+    <div className="typing-area">
+      <div className="typing-rule" />
+      <div className="typing-viewport" onClick={() => inputRef.current?.focus()}>
+        <div className="typing-line typing-line-current">
+          {text
+            .slice(current.start, current.end)
+            .split('')
+            .map((char, i) => {
+              const globalIndex = current.start + i;
+              const state: CharState = charStates[globalIndex] ?? 'pending';
+              const isCursor = globalIndex === cursor;
+              return (
+                <span key={globalIndex} className={`char ${state} ${isCursor ? 'cursor' : ''}`}>
+                  {char}
+                </span>
+              );
+            })}
+        </div>
+        <div className="typing-line typing-line-next">
+          {next ? text.slice(next.start, next.end) : ' '}
+        </div>
       </div>
       <input
         ref={inputRef}

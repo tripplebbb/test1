@@ -10,6 +10,8 @@
   --error: #ff3b3b;
   --error-bg: #ffe5e5;
   --key-bg: #f0f1f3;
+  --hand-color: #cfd3d8;
+  --hand-accent: #f4c430;
   color-scheme: light;
 }
 
@@ -25,6 +27,8 @@
   --error: #ff6161;
   --error-bg: #3a1f1f;
   --key-bg: #262a33;
+  --hand-color: #4a4f5a;
+  --hand-accent: #f4c430;
   color-scheme: dark;
 }
 

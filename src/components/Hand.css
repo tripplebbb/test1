@@ -1,0 +1,90 @@
+.hand-shape {
+  position: absolute;
+  width: 130px;
+  height: 150px;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.18));
+}
+
+.hand-inner {
+  position: absolute;
+  inset: 0;
+}
+
+.hand-inner.mirrored {
+  transform: scaleX(-1);
+}
+
+.palm {
+  position: absolute;
+  bottom: 0;
+  left: 15px;
+  width: 100px;
+  height: 66px;
+  border-radius: 40px 40px 26px 26px;
+  background: var(--hand-color);
+}
+
+.finger {
+  position: absolute;
+  bottom: 54px;
+  width: 17px;
+  border-radius: 10px;
+  background: var(--hand-color);
+  transform-origin: bottom center;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.finger-pinky {
+  left: 20px;
+  height: 46px;
+  transform: rotate(-16deg);
+}
+
+.finger-ring {
+  left: 41px;
+  height: 62px;
+  transform: rotate(-6deg);
+}
+
+.finger-middle {
+  left: 63px;
+  height: 68px;
+  transform: rotate(2deg);
+}
+
+.finger-index {
+  left: 85px;
+  height: 58px;
+  transform: rotate(12deg);
+}
+
+.finger-thumb {
+  left: 100px;
+  bottom: 14px;
+  width: 20px;
+  height: 44px;
+  transform: rotate(52deg);
+}
+
+.finger.active {
+  background: var(--hand-accent);
+}
+
+.finger-pinky.active {
+  transform: rotate(-16deg) translateY(-8px);
+}
+.finger-ring.active {
+  transform: rotate(-6deg) translateY(-8px);
+}
+.finger-middle.active {
+  transform: rotate(2deg) translateY(-8px);
+}
+.finger-index.active {
+  transform: rotate(12deg) translateY(-8px);
+}
+.finger-thumb.active {
+  transform: rotate(52deg) translateY(-6px);
+}

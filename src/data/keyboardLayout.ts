@@ -78,6 +78,16 @@ export const FINGER_MAP: Record<string, string[]> = {
   'right-pinky': ['Digit0', 'Minus', 'Equal', 'KeyP', 'BracketLeft', 'BracketRight', 'Semicolon', 'Quote', 'Slash'],
 };
 
+export const FINGER_LOOKUP: Record<string, { hand: 'left' | 'right'; finger: string }> = (() => {
+  const map: Record<string, { hand: 'left' | 'right'; finger: string }> = {};
+  for (const [key, codes] of Object.entries(FINGER_MAP)) {
+    const [hand, finger] = key.split('-') as ['left' | 'right', string];
+    for (const code of codes) map[code] = { hand, finger };
+  }
+  map['Space'] = { hand: 'right', finger: 'thumb' };
+  return map;
+})();
+
 export function charToCode(char: string): string | undefined {
   const lower = char.toLowerCase();
   for (const row of ROWS) {

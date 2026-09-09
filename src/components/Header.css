@@ -1,0 +1,155 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 4px;
+  position: relative;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.lang-select {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  color: var(--text);
+  user-select: none;
+}
+
+.lang-select svg {
+  color: var(--text-muted);
+  margin-left: 2px;
+}
+
+.lang-level {
+  color: var(--text-muted);
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.icon-btn:hover {
+  color: var(--text);
+}
+
+.lang-popup {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  z-index: 20;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  min-width: 260px;
+}
+
+.lang-popup-levels {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.lang-popup-level {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.lang-popup-level.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.lang-popup-lessons {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lang-popup-lesson {
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.lang-popup-lesson:hover {
+  background: var(--key-bg);
+}
+
+.lang-popup-lesson.active {
+  color: var(--accent);
+}
+
+.focus-toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.focus-toggle input {
+  display: none;
+}
+
+.focus-slider {
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--key-bg);
+  color: var(--text-faint);
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+
+.focus-toggle input:checked + .focus-slider {
+  background: var(--accent);
+  color: white;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-faint);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-pill svg {
+  color: var(--text-faint);
+}

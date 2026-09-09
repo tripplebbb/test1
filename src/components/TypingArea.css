@@ -1,17 +1,23 @@
 .typing-area {
   position: relative;
   cursor: text;
-  padding: 24px;
-  border-radius: 12px;
-  background: var(--panel-bg);
-  border: 1px solid var(--border);
+}
+
+.typing-rule {
+  border-top: 1px dashed var(--border);
+  margin-bottom: 40px;
+}
+
+.typing-viewport {
+  padding: 0 4px;
 }
 
 .typing-line {
   font-size: 22px;
-  line-height: 1.8;
+  line-height: 1.9;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-weight: 300;
+  word-spacing: 6px;
   letter-spacing: 0.3px;
   user-select: none;
   white-space: nowrap;
@@ -20,11 +26,10 @@
 
 .typing-line-next {
   color: var(--text-faint);
-  opacity: 0.5;
 }
 
 .char {
-  color: var(--text-muted);
+  color: var(--text-faint);
 }
 
 .char.correct {

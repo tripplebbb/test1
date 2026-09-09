@@ -3,14 +3,14 @@ import { LESSONS, type Level } from './data/texts';
 import { useTypingEngine } from './hooks/useTypingEngine';
 import { TypingArea } from './components/TypingArea';
 import { VirtualKeyboard } from './components/VirtualKeyboard';
-import { StatsBar } from './components/StatsBar';
-import { LevelSelector } from './components/LevelSelector';
+import { Header } from './components/Header';
 import './App.css';
 
 function App() {
   const [level, setLevel] = useState<Level>('basic');
   const [lessonId, setLessonId] = useState(LESSONS[0].id);
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme] = useState<'light' | 'dark'>('light');
+  const [focusMode, setFocusMode] = useState(false);
 
   const lesson = LESSONS.find((l) => l.id === lessonId) ?? LESSONS[0];
   const { typed, cursor, charStates, stats, isFinished, handleInput, reset } = useTypingEngine(
@@ -36,22 +36,18 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <header className="app-header">
-        <h1>Typerun Clone</h1>
-        <button className="theme-toggle" onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}>
-          {theme === 'light' ? '🌙' : '☀️'}
-        </button>
-      </header>
-
-      <LevelSelector
+    <div className={`app ${focusMode ? 'focus-mode' : ''}`}>
+      <Header
         level={level}
         lessonId={lessonId}
+        focusMode={focusMode}
+        started={cursor > 0}
+        stats={stats}
         onSelectLevel={handleSelectLevel}
         onSelectLesson={handleSelectLesson}
+        onRefresh={reset}
+        onToggleFocus={() => setFocusMode((v) => !v)}
       />
-
-      <StatsBar {...stats} />
 
       <TypingArea
         text={lesson.text}
@@ -63,7 +59,9 @@ function App() {
 
       {isFinished && (
         <div className="finish-banner">
-          <span>Готово! {stats.wpm} слов/мин, точность {stats.accuracy}%</span>
+          <span>
+            Готово! {stats.wpm} слов/мин, точность {stats.accuracy}%
+          </span>
           <button onClick={reset}>Повторить</button>
         </div>
       )}

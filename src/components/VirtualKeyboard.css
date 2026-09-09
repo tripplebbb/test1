@@ -1,11 +1,59 @@
-.keyboard {
+.kb-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kb-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.kb-layout {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.kb-layout svg {
+  color: var(--text-faint);
+}
+
+.kb-toolbar-icons {
+  display: flex;
+  gap: 4px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text-faint);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.icon-btn.on {
+  color: var(--accent);
+}
+
+.icon-btn:hover {
+  background: var(--key-bg);
+}
+
+.kb-keyboard {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 16px;
-  background: var(--panel-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
+  padding: 14px 0 60px;
 }
 
 .kb-row {
@@ -15,23 +63,27 @@
 }
 
 .kb-key {
-  width: 36px;
-  height: 36px;
+  position: relative;
+  width: 38px;
+  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 6px;
   background: var(--key-bg);
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 15px;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-weight: 300;
-  border: 1px solid var(--border);
-  transition: background 0.1s, transform 0.05s;
+  transition: background 0.12s, transform 0.08s, color 0.12s;
 }
 
-.kb-key.home {
-  border-bottom: 2px solid var(--accent-muted);
+.kb-sup {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  font-size: 8px;
+  color: var(--text-faint);
 }
 
 .kb-key.active {
@@ -40,6 +92,26 @@
   transform: scale(1.08);
 }
 
+.kb-sys {
+  font-size: 10px;
+  color: var(--text-faint);
+  width: 56px;
+  justify-content: center;
+}
+
+.kb-wide {
+  width: 72px;
+}
+
 .kb-space {
-  width: 320px;
+  flex: 1;
+  max-width: 420px;
+  height: 38px;
+}
+
+.hand-anchor {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 5;
 }

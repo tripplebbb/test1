@@ -72,7 +72,7 @@ export function useTypingEngine(target: string) {
       state.totalKeystrokes > 0
         ? Math.round(((state.totalKeystrokes - state.errors) / state.totalKeystrokes) * 100)
         : 100;
-    return { cpm, wpm, accuracy, errors: state.errors };
+    return { cpm, wpm, accuracy, errors: state.errors, totalKeystrokes: state.totalKeystrokes };
   }, [state, target.length]);
 
   return {
