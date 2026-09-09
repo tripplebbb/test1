@@ -1,0 +1,49 @@
+.level-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.level-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.level-tab {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--panel-bg);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.level-tab.active {
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
+}
+
+.lesson-list {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.lesson-item {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.lesson-item.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}

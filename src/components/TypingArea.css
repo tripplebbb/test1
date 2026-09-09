@@ -1,0 +1,43 @@
+.typing-area {
+  position: relative;
+  cursor: text;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+}
+
+.typing-text {
+  font-size: 22px;
+  line-height: 1.8;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
+
+.char {
+  color: var(--text-muted);
+}
+
+.char.correct {
+  color: var(--text);
+}
+
+.char.incorrect {
+  color: var(--error);
+  background: var(--error-bg);
+  border-radius: 2px;
+}
+
+.char.cursor {
+  outline: 2px solid var(--accent);
+  border-radius: 2px;
+}
+
+.typing-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 1px;
+  height: 1px;
+}

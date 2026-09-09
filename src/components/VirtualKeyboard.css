@@ -1,0 +1,44 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: var(--panel-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.kb-row {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.kb-key {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: var(--key-bg);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-family: 'Courier New', monospace;
+  border: 1px solid var(--border);
+  transition: background 0.1s, transform 0.05s;
+}
+
+.kb-key.home {
+  border-bottom: 2px solid var(--accent-muted);
+}
+
+.kb-key.active {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.08);
+}
+
+.kb-space {
+  width: 320px;
+}
