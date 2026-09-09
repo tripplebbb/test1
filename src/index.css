@@ -4,6 +4,7 @@
   --border: #e0e2e6;
   --text: #1a1a1a;
   --text-muted: #9aa0a6;
+  --text-faint: #c4c7cc;
   --accent: #2e71f3;
   --accent-muted: #a9c3f9;
   --error: #ff3b3b;
@@ -18,6 +19,7 @@
   --border: #2b2f38;
   --text: #e8e9ec;
   --text-muted: #6d7280;
+  --text-faint: #40444e;
   --accent: #4a8bff;
   --accent-muted: #2e4a80;
   --error: #ff6161;

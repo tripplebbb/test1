@@ -7,13 +7,20 @@
   border: 1px solid var(--border);
 }
 
-.typing-text {
+.typing-line {
   font-size: 22px;
   line-height: 1.8;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-weight: 300;
   letter-spacing: 0.3px;
   user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.typing-line-next {
+  color: var(--text-faint);
+  opacity: 0.5;
 }
 
 .char {
