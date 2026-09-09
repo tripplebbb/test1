@@ -24,7 +24,8 @@
   background: var(--key-bg);
   color: var(--text-muted);
   font-size: 14px;
-  font-family: 'Courier New', monospace;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-weight: 300;
   border: 1px solid var(--border);
   transition: background 0.1s, transform 0.05s;
 }

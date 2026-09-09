@@ -10,8 +10,9 @@
 .typing-text {
   font-size: 22px;
   line-height: 1.8;
-  font-family: 'Courier New', monospace;
-  letter-spacing: 0.5px;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-weight: 300;
+  letter-spacing: 0.3px;
   user-select: none;
 }
 
